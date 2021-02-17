@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from "../../redux/modules/character";
-
 import { ContentSearch } from '../../components/ContentSearch'
+import * as S from './styles'
 
-function Search() {
+function Search({ page }) {
 
     const { toggleSearch } = useSelector((state) => state.character.search);
     const dispatch = useDispatch();
@@ -24,10 +24,21 @@ function Search() {
         dispatch(Actions.toggleSearch(!toggleSearch))
     }
 
+    function handleFocusOut(ev) {
+        setTimeout(() => {
+            ev.target.value = '';
+            dispatch(Actions.resetSearch());
+            dispatch(Actions.toggleSearch(!toggleSearch))    
+        }, 50);
+    }
+
     return(
-        <div>
-            <input type='text' placeholder='busca' 
+        <>
+            <S.InputSearch 
+                page={page}
+                type='text' placeholder='Procure por heróis' 
                 onFocus={(ev) => handleFocus(ev)}
+                onBlur={(ev) => handleFocusOut(ev)}
                 onChange={(ev) => handleChange(ev)} 
             />
             {(toggleSearch) ? (
@@ -37,7 +48,7 @@ function Search() {
                 <></>
             )}
             
-        </div>
+        </>
 
     )
 }

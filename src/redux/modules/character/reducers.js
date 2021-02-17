@@ -24,6 +24,7 @@ const initialState = {
     isRequestSearch: true,
     term: '',
     listSearchById: {},
+    itemVisited: {},
     filter: {
       all: [],
     },
@@ -121,6 +122,10 @@ export default function reducer(state = initialState, action = {}) {
         draft.search.isRequestSearch = false;
         draft.search.listSearchById = {};
         draft.search.filter.all = [];
+        break;
+
+      case Constants.ITEMVISIT_SEARCH:
+        draft.search.itemVisited[action.id] = draft.search.listSearchById[action.id];
         break;
 
       case Constants.CHARACTER_GET_COMIC:

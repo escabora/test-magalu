@@ -4,7 +4,11 @@ export const getById = (state, id) => {
 
   } else if(state.search.listSearchById[id]) {
     return state.search.listSearchById[id]
-  } else {
+
+  } else if(state.search.itemVisited[id]) {
+    return state.search.itemVisited[id]
+    
+  }else {
     return state.comics.listComicById[id]
   }
 };

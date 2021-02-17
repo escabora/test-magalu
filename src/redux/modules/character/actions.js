@@ -85,6 +85,11 @@ export const resetSearch = (resetSearch) => ({
   resetSearch
 })
 
+export const searchItemVisit = (id) => ({
+  type: Constants.ITEMVISIT_SEARCH,
+  id
+})
+
 export const getCharacterComics = (id) => ({
   type: Constants.CHARACTER_GET_COMIC,
   id

@@ -18,7 +18,6 @@ function ListCardCharacters({ handleLoadMore }) {
   
     return (
       <>
-        <p>Encontrados {characters.length} resultados</p>
         <div style={ {display:'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '10px' }}>
           {characters.map((id) => (
             <CardCharacter key={id} id={id}/>

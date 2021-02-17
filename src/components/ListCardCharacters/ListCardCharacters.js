@@ -6,7 +6,7 @@ import { Selectors } from "../../redux/modules/character";
 import { CardCharacter } from '../../components/CardCharacter';
 
 function ListCardCharacters({ handleLoadMore }) {
-    const { isRequest, offset } = useSelector(
+    const { isRequest } = useSelector(
       (state) => state.character.list,
       shallowEqual
     );

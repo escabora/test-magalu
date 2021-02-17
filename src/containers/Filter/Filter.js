@@ -7,9 +7,9 @@ function Filter({ handleFilter }) {
 
   return (
     <button
-      onClick={() => handleFilter(character.list.statusFilter === "all" ? "alphabetic" : "all")}
+      onClick={() => handleFilter(character.list.statusFilter === "alphabetic" ? "all" : "alphabetic")}
     >
-      {character.list.statusFilter === "all" ? "alphabetic" : "all"}
+      {character.list.statusFilter === "alphabetic" ? "all" : "alphabetic"}
     </button>
   );
 }

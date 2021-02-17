@@ -45,6 +45,16 @@ export const removeLike = (removeLike) => ({
   removeLike
 });
 
+export const addComic = (id) => ({
+  type: Constants.ADD_COMIC,
+  id
+})
+
+export const removeComic = (id) => ({
+  type: Constants.REMOVE_COMIC,
+  id
+})
+
 export const toggleFavorite = (toggleFavorite) => ({
   type: Constants.TOGGLE_FAVORITE,
   toggleFavorite
@@ -74,3 +84,19 @@ export const resetSearch = (resetSearch) => ({
   type: Constants.RESET_SEARCH,
   resetSearch
 })
+
+export const getCharacterComics = (id) => ({
+  type: Constants.CHARACTER_GET_COMIC,
+  id
+})
+
+export const getCharacterComicsSuccess = (payload) => ({
+  type: Constants.CHARACTER_GET_COMIC_SUCCESS,
+  payload
+})
+
+export const getCharacterComicsFailure = (error) => ({
+  type: Constants.CHARACTER_GET_COMIC_FAILURE,
+  error
+})
+

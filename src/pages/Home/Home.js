@@ -1,10 +1,9 @@
 import React,  { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from "../../redux/modules/character";
-import { Filter } from '../../containers/Filter'
+import { Header } from '../../containers/Header'
 import { ListCardCharacters } from '../../components/ListCardCharacters'
 import { Favorites } from '../../components/Favorites'
-import { Search } from '../../containers/Search'
 
 function Home() {
 
@@ -20,22 +19,9 @@ function Home() {
     setCurrentPage(currentPage + 20);
   }, [currentPage]);
 
-  const onFilter = useCallback(
-    (value) => {
-      dispatch(Actions.filterCharacters(value));
-    },
-    [dispatch]
-  );
-
-  function handleFavorite() {
-    dispatch(Actions.toggleFavorite(!toggleFavorite))
-  }
-
   return (
     <>
-        <Search />
-        <Filter handleFilter={onFilter} />
-        <button onClick={() => handleFavorite()}>Abrir Favoritos</button>
+        <Header />
         {(toggleFavorite) ? (
           <Favorites />
         ) : (

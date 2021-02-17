@@ -35,17 +35,32 @@ export const getSearchById = (state) => {
   return statusList;
 };
 
+export const getComicsById = (state) => {
+  const { filter, listComicById } = state;
+
+  const currentStatus = filter.all;
+  const statusList = [];
+
+  currentStatus.forEach((id) => {
+    statusList.push(listComicById[id].id);
+  });
+
+  return statusList;
+};
 
 export const getStatusByLike = (state, typed) => {
-  const { like, statusFilter, filter, statusById } = state;
+  const { like, statusFilter, filter, statusById } = state.list;
+  const { listComicById } = state.comics;
 
-  const currentStatus = filter[statusFilter];
+  const currentStatus = (typed === 'comics') ? state.comics.filter.all : filter[statusFilter];
   const statusList = [];
 
   currentStatus.forEach((itemStatus)=> {
-    like[typed].filter(itemLike => {
+    like[typed].forEach(itemLike => {
       if(itemStatus === itemLike) {
-        statusList.push(statusById[itemStatus].id);
+        statusList.push(
+          (typed === 'comics') ? listComicById[itemStatus].id : statusById[itemStatus].id
+        );
       }
     })
   })
@@ -59,7 +74,7 @@ export const sortAlphabetic = (obj) => {
 };
 
 export const validationLike = (likes, typed, id) => {
-  if(typed == 'comic') {
+  if(typed === 'comics') {
     return likes.comics.filter(idItem => idItem === id)
   } else {
     return likes.characters.filter(idItem => idItem === id)

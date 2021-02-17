@@ -27,7 +27,19 @@ function* getSearchTerm({ term }) {
   }
 }
 
+function* getCharacterComics({ id }) {
+  try {
+    const results = yield call(api.getCharacterComic, id);
+
+    yield put(Actions.getCharacterComicsSuccess(results));
+  } catch (e) {
+    yield put(Actions.getCharacterComicsFailure(e));
+    yield call(toast.error, e);
+  }
+}
+
 export default function* root() {
   yield takeLatest(Constants.CHARACTER_GET_ALL, getAll);
   yield takeLatest(Constants.CHARACTER_GET_SERACH_TERM, getSearchTerm);
+  yield takeLatest(Constants.CHARACTER_GET_COMIC, getCharacterComics);
 }

@@ -15,6 +15,7 @@ function Search() {
             dispatch(Actions.getSearchTerm(term));
         } else {
             dispatch(Actions.resetSearch());
+            dispatch(Actions.toggleSearch(!toggleSearch))
         }
     }
 
@@ -23,17 +24,10 @@ function Search() {
         dispatch(Actions.toggleSearch(!toggleSearch))
     }
 
-    function handleFousOut(ev) {
-        dispatch(Actions.toggleSearch(!toggleSearch))
-        dispatch(Actions.resetSearch());
-        ev.target.value = '';
-    }
-
     return(
         <div>
             <input type='text' placeholder='busca' 
                 onFocus={(ev) => handleFocus(ev)}
-                onBlur={(ev) => handleFousOut(ev)} 
                 onChange={(ev) => handleChange(ev)} 
             />
             {(toggleSearch) ? (

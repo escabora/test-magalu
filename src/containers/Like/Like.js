@@ -13,18 +13,19 @@ function Like({ id, typed }) {
             if(Selectors.validationLike(likes, typed, id).length) {
                 dispatch(Actions.removeLike({id, typed}))
                 
-                if(typed === 'comic') {
-                    // dispatch(Actions.addComic({id, typed}))
+                if(typed === 'comics') {
+                    dispatch(Actions.removeComic(id))
                 }
 
             } else {
                 if(likes[typed].length <= 4) {
                     dispatch(Actions.like({id, typed}))
-                    if(typed === 'comic') {
-                        // dispatch(Actions.addComic({id, typed}))
+                    toast.success(`Seu ${(typed === 'characters') ? 'personagem' : 'quadrinho'} foi adicionado aos favoritos`)
+                    if(typed === 'comics') {
+                        dispatch(Actions.addComic(id))
                     }
                 } else {
-                    toast.error(`Máximo de 5 ${(typed === 'characters') ? 'personagens' : 'Quadrinhos'}`)
+                    toast.error(`Máximo de 5 ${(typed === 'characters') ? 'personagens' : 'quadrinhos'}`)
                 } 
             }  
     }

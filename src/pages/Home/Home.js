@@ -1,12 +1,14 @@
 import React,  { useEffect, useState, useCallback } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Actions } from "../../redux/modules/character";
 import { Filter } from '../../containers/Filter'
 import { ListCardCharacters } from '../../components/ListCardCharacters'
-
+import { Favorites } from '../../components/Favorites'
+import { Search } from '../../containers/Search'
 
 function Home() {
 
+  const { toggleFavorite } = useSelector((state) => state.character);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -25,10 +27,20 @@ function Home() {
     [dispatch]
   );
 
+  function handleFavorite() {
+    dispatch(Actions.toggleFavorite(!toggleFavorite))
+  }
+
   return (
     <>
+        <Search />
         <Filter handleFilter={onFilter} />
-        <ListCardCharacters handleLoadMore={onLoadMore} />
+        <button onClick={() => handleFavorite()}>Abrir Favoritos</button>
+        {(toggleFavorite) ? (
+          <Favorites />
+        ) : (
+          <ListCardCharacters handleLoadMore={onLoadMore} />
+        )}
     </>
     
   );

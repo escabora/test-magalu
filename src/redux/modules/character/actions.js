@@ -34,3 +34,43 @@ export const filterCharacters = (statusFilter) => ({
   type: Constants.FILTER_CHARACTERS,
   statusFilter
 });
+
+export const like = (like) => ({
+  type: Constants.LIKE_CHARACTERS,
+  like
+});
+
+export const removeLike = (removeLike) => ({
+  type: Constants.REMOVELIKE_CHARACTERS,
+  removeLike
+});
+
+export const toggleFavorite = (toggleFavorite) => ({
+  type: Constants.TOGGLE_FAVORITE,
+  toggleFavorite
+});
+
+export const getSearchTerm = (term) => ({
+  type: Constants.CHARACTER_GET_SERACH_TERM,
+  term
+});
+
+export const getSearchSuccess = (payload) => ({
+  type: Constants.CHARACTER_GET_SERACH_TERM_SUCCESS,
+  payload
+});
+
+export const getSearchFailure = (error) => ({
+  type: Constants.CHARACTER_GET_SERACH_TERM_FAILURE,
+  error
+});
+
+export const toggleSearch = (toggleSearch) => ({
+  type: Constants.TOGGLE_SEARCH,
+  toggleSearch
+})
+
+export const resetSearch = (resetSearch) => ({
+  type: Constants.RESET_SEARCH,
+  resetSearch
+})

@@ -1,7 +1,8 @@
 import { stringify } from 'query-string';
 import md5 from 'crypto-js/md5';
 
-const ENDPOINT = "https://gateway.marvel.com:443/v1/public/characters?";
+const ENDPOINTCHARACTERS = "https://gateway.marvel.com:443/v1/public/characters?";
+const ENDPOINTCOMICS = "https://gateway.marvel.com:443/v1/public/characters/";
 const publicKey = "7a61a91abdfca0f8867b988b8f4e306a";
 const privateKey = "6a96df46a91c28e0ac728731cbbeafe23e4e1fab";
 const ts = 1;
@@ -14,7 +15,7 @@ export const getCharacters = async (offset) => {
     hash: md5(ts+privateKey+publicKey)
   });
 
-  const response = await fetch(ENDPOINT + params, {
+  const response = await fetch(ENDPOINTCHARACTERS + params, {
       headers: new Headers({
         "Content-Type": "application/json; charset=utf-8"
       }),
@@ -37,7 +38,7 @@ export const getSearchByTerm = async (term) => {
     hash: md5(ts+privateKey+publicKey)
   });
 
-  const response = await fetch(ENDPOINT + params, {
+  const response = await fetch(ENDPOINTCHARACTERS + params, {
       headers: new Headers({
         "Content-Type": "application/json; charset=utf-8"
       }),
@@ -50,15 +51,4 @@ export const getSearchByTerm = async (term) => {
     });
 
   return response;
-};
-
-export const getCharacter = async (id) => {
-  // const response = await axios
-  //   .get(`${ENDPOINT}/${id}`)
-  //   .then(({ data }) => data)
-  //   .catch((err) => {
-  //     throw err.response;
-  //   });
-
-  // return response;
 };

@@ -16,6 +16,18 @@ function* getAll({ offset }) {
   }
 }
 
+function* getSearchTerm({ term }) {
+  try {
+    const results = yield call(api.getSearchByTerm, term);
+
+    yield put(Actions.getSearchSuccess(results));
+  } catch (e) {
+    yield put(Actions.getSearchFailure(e));
+    yield call(toast.error, e);
+  }
+}
+
 export default function* root() {
   yield takeLatest(Constants.CHARACTER_GET_ALL, getAll);
+  yield takeLatest(Constants.CHARACTER_GET_SERACH_TERM, getSearchTerm);
 }

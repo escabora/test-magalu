@@ -1,1 +1,1 @@
-export { default as ChardCharacter } from "./ChardCharacter";
+export { default as CardCharacter } from "./CardCharacter";

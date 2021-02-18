@@ -11,7 +11,7 @@ function Like({ id, typed }) {
   const handleLike = (id) => {
     if (Selectors.validationLike(likes, typed, id).length) {
       dispatch(Actions.removeLike({ id, typed }));
-      
+
       toast.success(
         `Seu ${
           typed === "characters" ? "personagem" : "quadrinho"

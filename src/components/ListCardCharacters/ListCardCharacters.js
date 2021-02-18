@@ -6,7 +6,7 @@ import { Selectors } from "../../redux/modules/character";
 import { CardCharacter } from "../../components/CardCharacter";
 import { Spiner } from "../Spiner";
 import * as C from "./styles";
-import Grid from '../../objects/Grid'
+import Grid from "../../objects/Grid";
 
 function ListCardCharacters({ handleLoadMore }) {
   const { isRequest } = useSelector(

@@ -15,7 +15,6 @@ function Header({ typePage }) {
   const { toggleFavorite } = useSelector((state) => state.character);
   const { toggleSearch } = useSelector((state) => state.character.search);
 
-
   useEffect(() => {
     checkBody();
   }, []);
@@ -76,11 +75,11 @@ function Header({ typePage }) {
         <>
           <H.HeaderContentInner>
             <H.HeaderLogoLink to={"/"} onClick={() => handleClickBody()}>
-              <img src={LogoPng} alt='Marvel' />
+              <img src={LogoPng} alt="Marvel" />
             </H.HeaderLogoLink>
             <Search page={typePage} />
             <H.HeaderSearch>
-            {toggleSearch ? <ContentSearch page={typePage} /> : <></>}
+              {toggleSearch ? <ContentSearch page={typePage} /> : <></>}
             </H.HeaderSearch>
           </H.HeaderContentInner>
         </>

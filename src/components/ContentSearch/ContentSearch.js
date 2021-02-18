@@ -33,5 +33,4 @@ ContentSearch.propTypes = {
   page: PropTypes.string.isRequired,
 };
 
-
 export default ContentSearch;

@@ -88,7 +88,11 @@ function Character() {
           </C.Column>
         </C.ColumnRow>
 
-        {comics.length ? <C.TitleLaunch>Últimos Lançamentos </C.TitleLaunch> : <></>}
+        {comics.length ? (
+          <C.TitleLaunch>Últimos Lançamentos </C.TitleLaunch>
+        ) : (
+          <></>
+        )}
 
         <Grid>
           {comics.map((id) => (

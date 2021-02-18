@@ -14,4 +14,9 @@ export const ContentSearch = styled.div`
   padding: ${rem("20px")};
   width: 100%;
   max-width: ${rem("1350px")};
+  box-sizing: border-box;
+
+  @media screen and (max-width: 520px) {
+    top: ${(props) => (props.page === "home" ? "70vh" : "36vh")};
+  }
 `;

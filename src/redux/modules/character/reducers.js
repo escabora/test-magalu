@@ -22,7 +22,7 @@ const initialState = {
   toggleFavorite: false,
   search: {
     isRequestSearch: true,
-    term: '',
+    term: "",
     listSearchById: {},
     itemVisited: {},
     filter: {
@@ -43,7 +43,6 @@ const initialState = {
 export default function reducer(state = initialState, action = {}) {
   return produce(state, (draft) => {
     switch (action.type) {
-
       case Constants.CHARACTER_GET_ALL:
         draft.list.isRequest = true;
         break;
@@ -125,7 +124,8 @@ export default function reducer(state = initialState, action = {}) {
         break;
 
       case Constants.ITEMVISIT_SEARCH:
-        draft.search.itemVisited[action.id] = draft.search.listSearchById[action.id];
+        draft.search.itemVisited[action.id] =
+          draft.search.listSearchById[action.id];
         break;
 
       case Constants.CHARACTER_GET_COMIC:

@@ -1,1 +1,1 @@
-export { default as ContentSearch } from './ContentSearch'
+export { default as ContentSearch } from "./ContentSearch";

@@ -4,7 +4,7 @@ import * as S from "./styles";
 function Spiner() {
   return (
     <S.Loading>
-        <div></div>
+      <div></div>
     </S.Loading>
   );
 }

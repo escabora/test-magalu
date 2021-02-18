@@ -22,7 +22,7 @@ function Home() {
 
   return (
     <>
-      <Header typePage={'home'}/>
+      <Header typePage={"home"} />
       {toggleFavorite ? (
         <Container>
           <Favorites />

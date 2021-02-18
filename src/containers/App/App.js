@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 function AppContainer({ children }) {
   return (
     <>
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
       {children}
     </>
   );

@@ -7,7 +7,7 @@ import { Character } from "../pages/Character";
 
 function Routes() {
   return (
-    <Router basename="/test-magalu">
+    <Router basename="test-magalu">
       <App>
         <Switch>
           <Route exact path="/" component={Home} />

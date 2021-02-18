@@ -59,8 +59,7 @@ export const getSearchByTerm = async (term) => {
 export const getCharacterComic = async (id) => {
   const params = stringify({
     ...paramsDefault,
-    orderBy: "-onsaleDate",
-    orderBy: "-issueNumber",
+    orderBy: "-onsaleDate,-issueNumber",
     limit: "10",
   });
 

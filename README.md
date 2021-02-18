@@ -23,9 +23,9 @@ yarn install
 [MAVEL INTERACTIVE API TESTER](https://developer.marvel.com/docs#!/public/getCreatorCollection_get_0)
 
 ## Features
-* Github Pages
+* Github pages
 * Responsive layout
-* Persist minicart data on page reload;
-* CI/CD;
+* Page / See more
+* Favorite data persists when reloading the page;
 * Use of ES6 +;
-* Instructions on how to build/run the project.
+* Instructions on how to build / execute the project.

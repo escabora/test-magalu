@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.js": "/static/js/main.03b9d43d.chunk.js",
-    "main.js.map": "/static/js/main.03b9d43d.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1047d1a5.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1047d1a5.js.map",
-    "static/js/2.72f9c779.chunk.js": "/static/js/2.72f9c779.chunk.js",
-    "static/js/2.72f9c779.chunk.js.map": "/static/js/2.72f9c779.chunk.js.map",
-    "static/js/3.4b4ba768.chunk.js": "/static/js/3.4b4ba768.chunk.js",
-    "static/js/3.4b4ba768.chunk.js.map": "/static/js/3.4b4ba768.chunk.js.map",
-    "index.html": "/index.html",
-    "static/js/2.72f9c779.chunk.js.LICENSE.txt": "/static/js/2.72f9c779.chunk.js.LICENSE.txt",
-    "static/media/book.9c1570ae.svg": "/static/media/book.9c1570ae.svg",
-    "static/media/heart-hover.758d6607.svg": "/static/media/heart-hover.758d6607.svg",
-    "static/media/hero.d4202a4c.svg": "/static/media/hero.d4202a4c.svg",
-    "static/media/logo.e2ba1f83.svg": "/static/media/logo.e2ba1f83.svg",
-    "static/media/logo.ea9702d6.png": "/static/media/logo.ea9702d6.png",
-    "static/media/play.a7cec4e7.svg": "/static/media/play.a7cec4e7.svg",
-    "static/media/review.d3504c92.svg": "/static/media/review.d3504c92.svg"
+    "main.js": "/test-magalu/static/js/main.03b9d43d.chunk.js",
+    "main.js.map": "/test-magalu/static/js/main.03b9d43d.chunk.js.map",
+    "runtime-main.js": "/test-magalu/static/js/runtime-main.4df10d00.js",
+    "runtime-main.js.map": "/test-magalu/static/js/runtime-main.4df10d00.js.map",
+    "static/js/2.3c3db59b.chunk.js": "/test-magalu/static/js/2.3c3db59b.chunk.js",
+    "static/js/2.3c3db59b.chunk.js.map": "/test-magalu/static/js/2.3c3db59b.chunk.js.map",
+    "static/js/3.4b4ba768.chunk.js": "/test-magalu/static/js/3.4b4ba768.chunk.js",
+    "static/js/3.4b4ba768.chunk.js.map": "/test-magalu/static/js/3.4b4ba768.chunk.js.map",
+    "index.html": "/test-magalu/index.html",
+    "static/js/2.3c3db59b.chunk.js.LICENSE.txt": "/test-magalu/static/js/2.3c3db59b.chunk.js.LICENSE.txt",
+    "static/media/book.9c1570ae.svg": "/test-magalu/static/media/book.9c1570ae.svg",
+    "static/media/heart-hover.758d6607.svg": "/test-magalu/static/media/heart-hover.758d6607.svg",
+    "static/media/hero.d4202a4c.svg": "/test-magalu/static/media/hero.d4202a4c.svg",
+    "static/media/logo.e2ba1f83.svg": "/test-magalu/static/media/logo.e2ba1f83.svg",
+    "static/media/logo.ea9702d6.png": "/test-magalu/static/media/logo.ea9702d6.png",
+    "static/media/play.a7cec4e7.svg": "/test-magalu/static/media/play.a7cec4e7.svg",
+    "static/media/review.d3504c92.svg": "/test-magalu/static/media/review.d3504c92.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1047d1a5.js",
-    "static/js/2.72f9c779.chunk.js",
+    "static/js/runtime-main.4df10d00.js",
+    "static/js/2.3c3db59b.chunk.js",
     "static/js/main.03b9d43d.chunk.js"
   ]
 }

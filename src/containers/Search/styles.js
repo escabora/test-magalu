@@ -17,7 +17,7 @@ export const InputSearch = styled.input`
     font-size: var(--font-big);
     width: 100%;
     border-radius: ${rem('50px')};
-    max-width: ${rem('860px')};
+    max-width: ${props => props.page === 'home' ? `${rem('860px')}` : `${rem('500px')}`};
 
     &::-webkit-input-placeholder {
         color: ${props => props.page === 'home' ? 'var(--color-pink-strong)' : 'var(--color-gray)'};

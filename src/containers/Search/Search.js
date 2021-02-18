@@ -1,56 +1,52 @@
-import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { PropTypes } from "prop-types";
+
 import { Actions } from "../../redux/modules/character";
-import { ContentSearch } from '../../components/ContentSearch'
-import * as S from './styles'
+import * as S from "./styles";
 
 function Search({ page }) {
+  const dispatch = useDispatch();
 
-    const { toggleSearch } = useSelector((state) => state.character.search);
-    const dispatch = useDispatch();
-
-    function handleChange(ev) {
-        const term = ev.target.value;
-        if(ev.target.value.length) {
-            dispatch(Actions.getSearchTerm(term));
-        } else {
-            dispatch(Actions.resetSearch());
-            dispatch(Actions.toggleSearch(!toggleSearch))
-        }
+  function handleChange(ev) {
+    const term = ev.target.value;
+    if (ev.target.value.length) {
+      dispatch(Actions.getSearchTerm(term));
+    } else {
+      dispatch(Actions.resetSearch());
+      dispatch(Actions.toggleSearch(false));
     }
+  }
 
-    function handleFocus(ev) {
-        ev.preventDefault();
-        dispatch(Actions.toggleSearch(!toggleSearch))
-    }
+  function handleFocus(ev) {
+    ev.preventDefault();
+    dispatch(Actions.toggleSearch(true));
+  }
 
-    function handleFocusOut(ev) {
-        setTimeout(() => {
-            ev.target.value = '';
-            dispatch(Actions.resetSearch());
-            dispatch(Actions.toggleSearch(!toggleSearch))    
-        }, 50);
-    }
+  function handleFocusOut(ev) {
+    setTimeout(() => {
+      ev.target.value = "";
+      dispatch(Actions.resetSearch());
+      dispatch(Actions.toggleSearch(false));
+    }, 50);
+  }
 
-    return(
-        <>
-            <S.InputSearch 
-                page={page}
-                type='text' placeholder='Procure por heróis' 
-                onFocus={(ev) => handleFocus(ev)}
-                onBlur={(ev) => handleFocusOut(ev)}
-                onChange={(ev) => handleChange(ev)} 
-            />
-            {(toggleSearch) ? (
-                <ContentSearch />
-            ) 
-            : (
-                <></>
-            )}
-            
-        </>
-
-    )
+  return (
+    <>
+      <S.InputSearch
+        page={page}
+        type="text"
+        placeholder="Procure por heróis"
+        onFocus={(ev) => handleFocus(ev)}
+        onBlur={(ev) => handleFocusOut(ev)}
+        onChange={(ev) => handleChange(ev)}
+      />
+    </>
+  );
 }
+
+Search.propTypes = {
+  page: PropTypes.string.isRequired,
+};
 
 export default Search;

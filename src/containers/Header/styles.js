@@ -22,6 +22,32 @@ export const HeaderLogoLink = styled(Link)`
     }
 `;
 
+export const HeaderContentInner = styled.header`
+  ${center}
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: var(--color-green);
+  flex-wrap: wrap;
+
+  & ${HeaderLogoLink} {
+    max-width: ${rem('290px')};
+    margin-right: ${rem('40px')};
+  }
+
+`;
+
+export const HeaderSearch = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > div {
+        justify-content: center;
+    }
+`;
+
 export const Title = styled.h2`
     font-size: var(--font-super-big);
     color: var(--color-grey-medium);
@@ -58,5 +84,26 @@ export const TextResult = styled.span`
 `;
 
 export const ButtonFavorite = styled.button`
+    display: flex;
+    align-items: center;
+    color: var(--color-pink-strong);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
 
+    &:hover {
+        opacity: 0.6;
+    }
+
+    & > svg {
+        margin-right: ${rem('10px')};
+        width: ${rem('30px')};
+        height: ${rem('30px')};
+    }
+
+    &:focus,
+    &:active {
+        border: 0;
+        box-shadow: none;
+        outline: none;
+    }
 `;

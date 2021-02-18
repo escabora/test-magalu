@@ -10,15 +10,14 @@ function Filter({ handleFilter }) {
   return (
     <F.LinkFilter>
       <HeroIcon /> Ordenar por nome - A/Z 
-      <F.Button
-      onClick={() =>
-        handleFilter(
-          character.list.statusFilter === "alphabetic" ? "all" : "alphabetic"
-        )
-      }
-    >
-      <F.ToggleClick />
-    </F.Button>
+      <F.ToggleClick
+        onClick={() =>
+          handleFilter(
+            character.list.statusFilter === "alphabetic" ? "all" : "alphabetic"
+          )
+        }
+        active={character.list.statusFilter === "alphabetic" ? "all" : "alphabetic"} 
+        />
     </F.LinkFilter>
   );
 }

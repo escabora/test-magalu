@@ -2,7 +2,7 @@
   "name": "test-magalu",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "https://escabora.github.io/test-magalu/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
